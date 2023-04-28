@@ -2,8 +2,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { CoffeeListComponent } from './coffee-list.component';
+import { CoffeeService } from '../coffee.service';
 
 describe('CoffeeListComponent', () => {
   let component: CoffeeListComponent;
@@ -11,7 +12,9 @@ describe('CoffeeListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoffeeListComponent ]
+      imports: [HttpClientModule],
+      declarations: [ CoffeeListComponent ],
+      providers: [ CoffeeService ]
     })
     .compileComponents();
   }));

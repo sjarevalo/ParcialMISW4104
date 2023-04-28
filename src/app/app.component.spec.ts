@@ -1,11 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-
+import { CoffeeListComponent } from '../app/coffee/coffee-list/coffee-list.component';
+import { HttpClientModule } from '@angular/common/http';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientModule],
       declarations: [
-        AppComponent
+        AppComponent, CoffeeListComponent
       ],
     }).compileComponents();
   });
@@ -22,10 +24,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ParcialMISW4104');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ParcialMISW4104 app is running!');
-  });
 });
