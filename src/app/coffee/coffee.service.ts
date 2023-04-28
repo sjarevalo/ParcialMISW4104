@@ -6,7 +6,7 @@ import { Coffee } from './coffee';
 @Injectable({
   providedIn: 'root'
 })
-export class CoffeService {
+export class CoffeeService {
 
 constructor(private http: HttpClient) { }
 private apiUrl: string = environment.baseUrl;
